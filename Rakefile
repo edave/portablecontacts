@@ -4,7 +4,7 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "portablecontacts"
+    gem.name = "edave-portablecontacts"
     gem.summary = %Q{Portable Contacts client for Ruby}
     gem.description = %Q{A client library for the portable contacts standard}
     gem.email = "pelleb@gmail.com"
@@ -16,24 +16,24 @@ begin
     gem.add_development_dependency "rspec"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
-  Jeweler::RubyforgeTasks.new do |rubyforge|
-    rubyforge.doc_task = "rdoc"
-  end
+  #Jeweler::RubyforgeTasks.new do |rubyforge|
+  #  rubyforge.doc_task = "rdoc"
+  #end
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: sudo gem install jeweler"
 end
 
-require 'spec/rake/spectask'
-Spec::Rake::SpecTask.new(:spec) do |spec|
-  spec.libs << 'lib' << 'spec'
-  spec.spec_files = FileList['spec/**/*_spec.rb']
-end
+#require 'spec/rake/spectask'
+#Spec::Rake::SpecTask.new(:spec) do |spec|
+#  spec.libs << 'lib' << 'spec'
+#  spec.spec_files = FileList['spec/**/*_spec.rb']
+#end
 
-Spec::Rake::SpecTask.new(:rcov) do |spec|
-  spec.libs << 'lib' << 'spec'
-  spec.pattern = 'spec/**/*_spec.rb'
-  spec.rcov = true
-end
+#Spec::Rake::SpecTask.new(:rcov) do |spec|
+#  spec.libs << 'lib' << 'spec'
+#  spec.pattern = 'spec/**/*_spec.rb'
+#  spec.rcov = true
+#end
 
 task :spec => :check_dependencies
 
